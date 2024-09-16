@@ -1,23 +1,22 @@
-const cards = document.querySelectorAll(".card");
+let h1 = document.querySelector("h1")
 
-cards.forEach(card => {
-    const h5 = card.querySelector("h5");
-    const text = card.querySelector(".card-text");
-    const img = card.querySelector(".card-iframe");
+h1.innerText = "Home"
 
-    if (h5.innerText.includes("Cachorrin Martinez") && text.innerText.includes("$181222Perricoins") && img.src.includes("https://gifer.com/embed/Hgf5")) {
-        h5.innerText = "Cachorrin Martinez en ofertas";
-        text.innerText = "Precio anterior ̶$1̶8̶1̶2̶2̶2̶ Perricoins \ Precio actual $140724";
-        img.src = "https://gifer.com/embed/506K";
-    } else if (h5.innerText.includes("Panchito Guerrero") && text.innerText.includes("$1914Perricoins") && img.src.includes("https://gifer.com/embed/7AaG")) {
-        h5.innerText = "WarriorCat";
-        text.innerText = "Precio anterior  ̶$̶1̶9̶1̶4̶ Perricoins \ Precio actual $1917";
-        img.src = "https://gifer.com/embed/22Cl";
-    } else if (h5.innerText.includes("El Github") && text.innerText.includes("$2008Perricoins") && img.src.includes("https://gifer.com/embed/Ao")) {
-        h5.innerText = "El Doghub";
-        text.innerText = "Precio anterior ̶$̶2̶0̶0̶8̶ Perricoins \ Precio actual $2024";
-        img.src = "https://gifer.com/embed/fyFn";
-    }
-});
+let  array = [];
 
- 
+for (let i=1 ; i < 10 ; i++) {
+array.push(`<div class="row">
+    <div class="col-sm-6 mb-3 mb-sm-0">
+    <div class="card" style="width: 18rem;">
+  <img src="https://66d9ee6caa07a954166f10ed--gregarious-melba-cacdba.netlify.app/${i}.jpg" class="card-img-top" alt="auto ${i}">
+  <div class="card-body">
+    <p class="card-text">el auto ${i} tiene un precio asignado de ${i}000000$</p>
+    </div>
+   </div>
+  </div>
+</div>);`)
+
+}
+console.log(array);
+
+document.querySelector('.container').innerHTML = array.join("");
